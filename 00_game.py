@@ -143,17 +143,17 @@ canvas.create_text(512, 283, text="スペースキーでゲームスタート", 
 
 hit_btn = tkinter.Button(root, text="ヒット", font=(
     "system", 24), bg="gold", command=hit_action)
-hit_btn.place(x=390, y=420)
+hit_btn.place(x=300, y=420)
 hit_btn["state"] = "disabled"
 
 stand_btn = tkinter.Button(root, text="スタンド", font=(
     "system", 24), bg="silver", command=stand_action)
-stand_btn.place(x=470, y=420)
+stand_btn.place(x=380, y=420)
 stand_btn["state"] = "disabled"
 
 reset_btn = tkinter.Button(root, text="もう1回", font=(
     "system", 24), bg="#ac6b25", command=reset_game)
-reset_btn.place(x=570, y=420)
+reset_btn.place(x=480, y=420)
 reset_btn["state"] = "disabled"
 
 root.bind("<space>", start_game)
