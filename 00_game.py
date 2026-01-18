@@ -148,7 +148,7 @@ hit_btn["state"] = "disabled"
 
 stand_btn = tkinter.Button(root, text="スタンド", font=(
     "system", 24), bg="silver", command=stand_action)
-stand_btn.place(x=470, y=420)
+stand_btn.place(x=450, y=420)
 stand_btn["state"] = "disabled"
 
 reset_btn = tkinter.Button(root, text="もう1回", font=(
