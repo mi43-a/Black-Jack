@@ -130,7 +130,7 @@ def reset_game():
   global flag
   canvas.delete("all")
   canvas.create_image(512, 283, image=table)
-  canvas.create_text(512, 283, text="スペースキーでstart_game", font=(
+  canvas.create_text(512, 283, text="スペースキーでゲームスタート", font=(
       "system", 50), fill="white", tags="start_game_message")
   flag = 0
   hit_btn["state"] = "disabled"
@@ -138,7 +138,7 @@ def reset_game():
 
 # --- 画面構成とボタン ---
 canvas.create_image(512, 283, image=table)
-canvas.create_text(512, 283, text="スペースキーでstart_game", font=(
+canvas.create_text(512, 283, text="スペースキーでゲームスタート", font=(
     "system", 34, "bold"), fill="white", tags="start_game_message")
 
 hit_btn = tkinter.Button(root, text="ヒット", font=(
