@@ -148,12 +148,12 @@ hit_btn["state"] = "disabled"
 
 stand_btn = tkinter.Button(root, text="スタンド", font=(
     "system", 24), bg="silver", command=stand_action)
-stand_btn.place(x=450, y=420)
+stand_btn.place(x=430, y=420)
 stand_btn["state"] = "disabled"
 
 reset_btn = tkinter.Button(root, text="もう1回", font=(
     "system", 24), bg="#ac6b25", command=reset_game)
-reset_btn.place(x=660, y=420)
+reset_btn.place(x=620, y=420)
 reset_btn["state"] = "disabled"
 
 root.bind("<space>", start_game)
