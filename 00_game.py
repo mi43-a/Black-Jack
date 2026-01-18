@@ -23,8 +23,8 @@ canvas = tkinter.Canvas(bg="black", width=1024, height=577)
 canvas.place(x=0, y=0)
 
 # --- 画像の読み込み ---
-ポーカーテーブル = tkinter.PhotoImage(file="image\テーブル-1024x577.png")
-トランプ_裏 = tkinter.PhotoImage(file="image\cards-back.png")
+ポーカーテーブル = tkinter.PhotoImage(file="image\table.png")
+トランプ_裏 = tkinter.PhotoImage(file="image\cards_back.png")
 トランプカード = [トランプ_裏]
 for i in range(1, 14):
   トランプカード.append(tkinter.PhotoImage(file=f"image/{i}.png"))
