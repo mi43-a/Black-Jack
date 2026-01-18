@@ -14,7 +14,7 @@
 👉[ブラックジャックの画面録画](https://youtu.be/DZ36juWAcVA)
 
 ## 遊び方
-遊ぶときは、Pythonをインストールしたり、VSCodeをインストールして、BlackJack.pyにあるコードを貼り付けてください。
+遊ぶときは、Pythonをインストールしたり、VSCodeをインストールして、Black_Jack.pyにあるコードを貼り付けてください。
 
 ## このゲームの概要
 ### 基本ルール
