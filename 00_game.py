@@ -23,8 +23,8 @@ canvas = tkinter.Canvas(bg="black", width=1024, height=577)
 canvas.place(x=0, y=0)
 
 # --- 画像の読み込み ---
-table = tkinter.PhotoImage(file="image\table.png")
-card_back = tkinter.PhotoImage(file="image\cards_back.png")
+table = tkinter.PhotoImage(file="image/table.png")
+card_back = tkinter.PhotoImage(file="image/cards_back.png")
 cards = [card_back]
 for i in range(1, 14):
   cards.append(tkinter.PhotoImage(file=f"image/{i}.png"))
@@ -42,7 +42,6 @@ def check_hit():
   global player_total
   if player_total > 21:
     canvas.create_text(512, 180, text="バーストしました\nあなたの負けです",
-                       # typr: ignore
                        fill="red", font=("system", 65), tags="result")
     hit_btn["state"] = "disable"
     stand_btn["state"] = "disable"
@@ -69,7 +68,7 @@ def check_stand():
     color = "blue"
 
   canvas.create_text(512, 100, text=msg, fill=color,
-                     font=("system", 60), tag="result")  # typr: ignore
+                     font=("system", 60, "bold"), tags="result")
 
 def start_game(e):
   global flag, player_total, dealer_total, dealer_card_1, dealer_card_2
@@ -100,7 +99,7 @@ def start_game(e):
     dealer_total = score(d1) + score(d2)
 
     canvas.create_text(160, 300, text=player_total, fill="white",
-                       font=("system", 40), tag="total_score")
+                       font=("system", 40), tags="total_score")
     flag = 1  # ゲーム進行中。スペースキーが押されても何も起きない
 
 def hit_action():
@@ -114,7 +113,7 @@ def hit_action():
 
   canvas.delete("total_score")
   canvas.create_text(160, 300, text=player_total, fill="white",
-                     font=("system", 40), tag="total_score")
+                     font=("system", 40), tags="total_score")
 
   flag += 1
   check_hit()
@@ -124,7 +123,7 @@ def stand_action():
   canvas.delete("card_back_4")
   deal_cards(300, 180, dealer_card_2)
   canvas.create_text(160, 180, text=dealer_total, fill="white",
-                     font=("system", 40), tag="total_score")
+                     font=("system", 40), tags="total_score")
   check_stand()
 
 def reset_game():
@@ -132,7 +131,7 @@ def reset_game():
   canvas.delete("all")
   canvas.create_image(512, 283, image=table)
   canvas.create_text(512, 283, text="スペースキーでstart_game", font=(
-      "system", 50), fill="white", tag="start_game_message")
+      "system", 50), fill="white", tags="start_game_message")
   flag = 0
   hit_btn["state"] = "disabled"
   stand_btn["state"] = "disabled"
@@ -140,20 +139,20 @@ def reset_game():
 # --- 画面構成とボタン ---
 canvas.create_image(512, 283, image=table)
 canvas.create_text(512, 283, text="スペースキーでstart_game", font=(
-    "system", 34, "bold"), fill="white", tag="start_game_message")
+    "system", 34, "bold"), fill="white", tags="start_game_message")
 
-hit_btn = tkinter.Button(root, text="ヒット", font=24,
-                         bg="gold", command=hit_action)
+hit_btn = tkinter.Button(root, text="ヒット", font=(
+    "system", 24), bg="gold", command=hit_action)
 hit_btn.place(x=390, y=420)
 hit_btn["state"] = "disabled"
 
-stand_btn = tkinter.Button(root, text="スタンド", font=24,
-                           bg="silver", command=stand_action)
+stand_btn = tkinter.Button(root, text="スタンド", font=(
+    "system", 24), bg="silver", command=stand_action)
 stand_btn.place(x=470, y=420)
 stand_btn["state"] = "disabled"
 
-reset_btn = tkinter.Button(root, text="もう1回", font=24,
-                           bg="#ac6b25", command=reset_game)
+reset_btn = tkinter.Button(root, text="もう1回", font=(
+    "system", 24), bg="#ac6b25", command=reset_game)
 reset_btn.place(x=570, y=420)
 reset_btn["state"] = "disabled"
 
